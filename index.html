@@ -9,20 +9,23 @@
 </head>
 <body>
     <h1>Lab: Pixel Art Maker</h1>
+    <div id="rightcolumn">
+        <h2 class="gsize">Grid Size</h2>
+        <form id="sizePicker">
+            <span class="label">Grid Height:</span>
+            <input type="number" id="input_height" name="height" min="1" value="16">
+            <span class="label">Grid Width:</span>
+            <input type="number" id="input_width" name="width" min="1" value="16">
+            <input type="submit">
+        </form>
 
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="input_height" name="height" min="1" value="8">
-        Grid Width:
-        <input type="number" id="input_width" name="width" min="1" value="8">
-        <input type="submit">
-    </form>
+        <h2 class="gsize">Pixel Size</h2>
+        <input type="number" id="pixelsize" name="pixelsize" min="1" value="1">
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker" value="#0000ff">
-
-    <h2>Design Canvas</h2>
+        <h2 class="gsize">Pick A Color</h2>
+        <input type="color" id="colorPicker" value="#0000ff">
+    </div>
+    <h2>Create Pixeled Images</h2>
     <table id="pixel_canvas"></table>
 
     <script src="designs.js"></script>

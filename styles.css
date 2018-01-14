@@ -1,11 +1,15 @@
-body {
+html,body {
+    margin:0;
+    padding:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
 }
 
 h1 {
     font-family: Monoton;
-    font-size: 40px;
-    margin: 0.2em;
+    font-size: 300%;
+    margin: 0.1em;
+    color:rgb(109, 6, 206);
 }
 
 h2 {
@@ -16,10 +20,15 @@ h2:first-of-type {
     margin-top: 0.5em;
 }
 
+.gsize{
+    float:left;
+    margin:5px;
+    font-size:15px;
+}
 table,
 tr,
 td {
-    border: 1px solid rgb(82, 27, 27);
+    border: 1px solid rgb(197, 197, 197);
 }
 
 table {
@@ -38,9 +47,63 @@ tr {
 td {
     width: 20px;
     margin: 0;
-     background-color:#fff;
+    background-color:#fff;
 }
 
+#sizePicker{
+    display: block;
+}
+.label{
+    display: block;
+    float: left;
+    width: 100%;
+    margin:5px 0 0 5px;
+    color:#ccc;
+    font-size: 12px;
+    text-align: left;
+}
 input[type=number] {
-    width: 7em;
+    display: block;
+    float: left;
+    margin:1px 5px;
+    padding:5px;
+    width: 4em;
+    border:1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    display: block;
+    float: left;
+    margin: 1px 5px;
+    padding: 5px;
+    width: 5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: green;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type=color] {
+    display: block;
+    float: left;
+    margin: 1px 5px;
+    padding: 5px;
+    width: 5em;
+    height: 5em;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#rightcolumn{
+    width: 100px;
+    float: left;
+}
+
+#colorPicker{
+    float: left;
+    margin:5px;
 }
