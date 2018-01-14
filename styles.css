@@ -4,7 +4,7 @@ body {
 
 h1 {
     font-family: Monoton;
-    font-size: 70px;
+    font-size: 40px;
     margin: 0.2em;
 }
 
@@ -19,22 +19,28 @@ h2:first-of-type {
 table,
 tr,
 td {
-    border: 1px solid black;
+    border: 1px solid rgb(82, 27, 27);
 }
 
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    cursor: pointer;
+    background-color:#fff;
 }
 
 tr {
     height: 20px;
+     margin: 0;
+     background-color:#fff;
 }
 
 td {
     width: 20px;
+    margin: 0;
+     background-color:#fff;
 }
 
 input[type=number] {
-    width: 6em;
+    width: 7em;
 }
