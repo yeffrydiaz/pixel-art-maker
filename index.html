@@ -8,25 +8,35 @@
         crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Lab: Pixel Art Maker</h1>
-    <div id="rightcolumn">
-        <h2 class="gsize">Grid Size</h2>
-        <form id="sizePicker">
-            <span class="label">Grid Height:</span>
-            <input type="number" id="input_height" name="height" min="1" value="16">
-            <span class="label">Grid Width:</span>
-            <input type="number" id="input_width" name="width" min="1" value="16">
-            <input type="submit">
-        </form>
+    <div id="app">
+        <header class="navBar">
+            <h1>Lab: Pixel Art Maker</h1>
+        </header>
+        <div id="container">
+            <div class="column left">
+                <h2 class="tooltittle">Grid Size</h2>
+                <form id="sizePicker">
+                    <span class="label">Grid Height:</span>
+                    <input type="number" id="input_height" name="height" min="1" value="16">
+                    <span class="label">Grid Width:</span>
+                    <input type="number" id="input_width" name="width" min="1" value="16">
+                </form>
 
-        <h2 class="gsize">Pixel Size</h2>
-        <input type="number" id="pixelsize" name="pixelsize" min="1" value="1">
+                <h2 class="tooltittle">Pixel Size</h2>
+                <input type="number" id="pixelsize" name="pixelsize" min="1" value="20">
 
-        <h2 class="gsize">Pick A Color</h2>
-        <input type="color" id="colorPicker" value="#0000ff">
+                <h2 class="tooltittle">Color</h2>
+                <input type="color" id="colorPicker" value="#0000ff">
+
+                <h2 class="tooltittle">Palette</h2>
+                <div id="palette"></div>
+            </div>
+            <div class="column">
+                <h2>Create Pixeled Images</h2>
+                <table id="pixel_canvas"></table>
+            </div>
+        </div>
     </div>
-    <h2>Create Pixeled Images</h2>
-    <table id="pixel_canvas"></table>
 
     <script src="designs.js"></script>
 </body>

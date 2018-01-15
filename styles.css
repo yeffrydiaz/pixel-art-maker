@@ -3,27 +3,45 @@ html,body {
     padding:0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    background-color:#fff;
+}
+
+#container{
+    display: grid;
+    --rightcolumnw: 80px;
+    --canvaswidth: calc(100% - var(--rightcolumnw));
+    grid-template-columns: var(--rightcolumnw) var(--canvaswidth);
+    justify-content: center;
+    justify-items: center;
+}
+.column {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.left{
+    float: left;
+    margin: 0;
 }
 
 h1 {
     font-family: Monoton;
     font-size: 300%;
     margin: 0.1em;
-    color:rgb(109, 6, 206);
+    color:rgb(114, 0, 167);
 }
 
 h2 {
-    margin: 1em 0 0.25em;
+    margin: 5px auto;
+    font-size: 15px;
+    color: #333;
 }
 
-h2:first-of-type {
-    margin-top: 0.5em;
-}
-
-.gsize{
+.tooltittle {
     float:left;
-    margin:5px;
-    font-size:15px;
+    margin:5px 0 0 5px;
+    font-size:13px;
 }
 table,
 tr,
@@ -35,24 +53,17 @@ table {
     border-collapse: collapse;
     margin: 0 auto;
     cursor: pointer;
-    background-color:#fff;
 }
 
-tr {
+tr,td {
     height: 20px;
-     margin: 0;
-     background-color:#fff;
-}
-
-td {
-    width: 20px;
     margin: 0;
-    background-color:#fff;
 }
 
-#sizePicker{
+#pixelsize{
     display: block;
 }
+
 .label{
     display: block;
     float: left;
@@ -62,48 +73,47 @@ td {
     font-size: 12px;
     text-align: left;
 }
-input[type=number] {
-    display: block;
-    float: left;
-    margin:1px 5px;
-    padding:5px;
+
+input{
+ display: block;
+ float: left;
+ margin:1px 5px;
+ padding:5px;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ outline: none;
+}
+input[type=number] {   
     width: 4em;
-    border:1px solid #ccc;
-    border-radius: 5px;
 }
 
-input[type=submit] {
-    display: block;
-    float: left;
-    margin: 1px 5px;
-    padding: 5px;
+input[type=submit] {    
     width: 5em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     background: green;
     color: #fff;
     cursor: pointer;
 }
 
 input[type=color] {
-    display: block;
     float: left;
-    margin: 1px 5px;
-    padding: 5px;
-    width: 5em;
-    height: 5em;
+    margin: 0 0 5px 5px;
+    width: 4.4em;
+    height: 4.4em;
     border: none;
-    border-radius: 5px;
-    color: #fff;
+    cursor: pointer;    
+}
+
+#palette{
+    float: left;
+    width: 68px;
+    margin: 1px 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 17px);
+    border: 1px solid #777;
+    border-radius: 2px;
+}
+
+.palettecolor{
+    height: 14px;
     cursor: pointer;
-}
-
-#rightcolumn{
-    width: 100px;
-    float: left;
-}
-
-#colorPicker{
-    float: left;
-    margin:5px;
 }

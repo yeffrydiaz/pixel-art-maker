@@ -1,8 +1,6 @@
-$(document).ready(makeGrid);
-
-$('#sizePicker').submit(()=>{
-  event.preventDefault();
+$(document).ready(()=> {
   makeGrid();
+  createPalette();
 });
 
 function makeGrid() {
@@ -22,9 +20,12 @@ function makeGrid() {
 }
 
 $(document)
+  .on('keyup', '#input_height,#input_width', makeGrid)
+
+$(document)
  .on('keyup', '#pixelsize', e => {
    const pSize = $('#pixelsize').val();
-   pixelSize(pSize);
+   if (pSize)pixelSize(pSize);
 })
 
 function pixelSize(x){
@@ -34,10 +35,57 @@ function pixelSize(x){
       'height': x
     })
 }
-$(document).on('click', '#pixel_canvas', e => {
-  const id = $('#pixel_canvas').children().attr('id'),
-        colorPicked = $('#colorPicker').val(),
-        cellColor = e.target.style.backgroundColor;
-     e.target.style.backgroundColor = 
-      cellColor==='' ? colorPicked  : ''; 
-  })
+
+$(document)
+ .on('click', '#pixel_canvas', e => {
+  const id = colorPicked = $('#colorPicker').val(),
+            cellColor = e.target.style.backgroundColor;
+          e.target.style.backgroundColor = 
+          cellColor==='' ||
+         cellColor !== colorPicked ? 
+       colorPicked  : ''; 
+})
+
+$(document)
+  .on('click', '#palette', e => {
+    const colorclicked = e.target.style.backgroundColor;
+      $('#colorPicker')
+        .val(rgb2hex(colorclicked));
+})
+
+function createPalette(){
+  const arr = [ '#FFFFFF'	, '#C0C0C0'	,	'#808080'	,
+                '#000000'	,	'#FF0000'	,	'#800000'	,	
+                '#FFFF00'	,	'#808000'	,	'#00FF00'	,	
+                '#008000'	,	'#00FFFF'	,	'#008080'	,	
+                '#0000FF'	,	'#000080'	,	'#FF00FF'	,	
+                '#800080'
+              ];
+  arr.forEach((c) => {
+    $('#palette')
+    .append(
+      `<div 
+        class="palettecolor" 
+        style="background-color:${c};">
+    </div>`
+    )
+  });    
+}
+
+//convert rgb color to hex format
+var hexDigits = new Array
+  ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"); 
+function rgb2hex(rgb) {
+  rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+  return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+function hex(x) {
+  return isNaN(x) ? 
+         "00" :
+         hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+}
+
+
+// function paletteColorPicker(){
+
+// }
